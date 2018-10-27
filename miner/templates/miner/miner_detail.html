@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Detail</title>
+</head>
+<body>
+		<h1>detail??</h1>
+		<h3>{{ machine.name }}</h3>
+		<h4>{{ machine.para1 }}</h4>
+		<h5>{{ machine.para2 }}</h5>
+		<h6>{{ machine.para3 }}</h6>
+		<h6>{{ machine.para4 }}</h6>
+		<h6>{{ machine.para5 }}</h6>
+		<form action="{% url 'miner:change' %}" method="POST" >
+			<input type="hidden" name="miner" value="{{machine.id}}">
+			{% csrf_token %}
+			<label>
+				<tr>
+					<td>choice</td>
+					<td>
+						<select name="pool">
+							<option value="{{ now_pool.id }}">{{ now_pool.name }}</option>
+							{% for pool in pools %}
+								<option value="{{ pool.id }}">{{ pool.name }}</option>
+							{% endfor %}
+						</select>
+					</td>
+					<td><input type="submit" value="Delete" /></td>
+				</tr>
+			</label>
+		</form>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Miner</title>
+</head>
+<body>
+	<ul>
+		<li>
+			<form class="#" action="{% url 'accounts:logout' %}" method="post">
+				{% csrf_token %}
+				<button type="submit">Logout</button>
+			</form>
+		</li>
+	</ul>
+	{% for miner in mine_machines %}
+		<h2><a href="{% url 'miner:detail' miner.id %}">{{ miner.name }}</a></h2>
+	{% endfor %}
+</body>
+</html>
