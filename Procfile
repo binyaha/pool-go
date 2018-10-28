@@ -1,2 +1,2 @@
 	
-web: gunicorn pool.wsgi
+web: python runserver.py $PORT
