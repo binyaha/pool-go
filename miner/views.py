@@ -6,7 +6,7 @@ from . import forms
 # API
 # from rest_framework.views import APIView
 # from rest_framework.response import Response
-from .serializers import Minerserializer
+# from .serializers import Minerserializer
 
 from django.core import serializers
 
