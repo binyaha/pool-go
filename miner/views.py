@@ -4,8 +4,8 @@ from .models import Miner, Pool, PoolMux
 from django.contrib.auth.decorators import login_required
 from . import forms
 # API
-from rest_framework.views import APIView
-from rest_framework.response import Response
+# from rest_framework.views import APIView
+# from rest_framework.response import Response
 from .serializers import Minerserializer
 
 from django.core import serializers
@@ -64,11 +64,11 @@ def change_pool(request):
 
 	return redirect('miner:index')
 
-class miner_pool(APIView):
+# class miner_pool(APIView):
 
-	def get(self, request):
-		miners = serializers.serialize("json",Miner.objects.all())
-		return HttpResponse(miners)
+# 	def get(self, request):
+# 		miners = serializers.serialize("json",Miner.objects.all())
+# 		return HttpResponse(miners)
 
 
 
